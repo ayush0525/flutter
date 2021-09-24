@@ -13,14 +13,16 @@ class _LoginPageState extends State<LoginPage> {
   final _formkey = GlobalKey<FormState>();
 
   moveToHome(BuildContext context) async {
-    setState(() {
-      changeButton = true;
-    });
-    await Future.delayed(Duration(seconds: 1));
-    await Navigator.pushNamed(context, MyRoutes.homeRoute);
-    setState(() {
-      changeButton = false;
-    });
+    if (_formkey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
+      await Future.delayed(Duration(seconds: 1));
+      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      setState(() {
+        changeButton = false;
+      });
+    }
   }
 
   @override
@@ -60,6 +62,12 @@ class _LoginPageState extends State<LoginPage> {
                           icon: Icon(Icons.email, color: Colors.deepOrange),
                           hintText: "Enter User Name",
                           labelText: "username"),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "User Name cannnot be empty";
+                        }
+                        return null;
+                      },
                       onChanged: (value) {
                         name = value;
                         setState(() {});
@@ -71,6 +79,15 @@ class _LoginPageState extends State<LoginPage> {
                           icon: Icon(Icons.lock, color: Colors.deepOrange),
                           hintText: "Enter Password",
                           labelText: "password"),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Password cannnot be empty";
+                        } else if (value.length < 6) {
+                          return "password lenght cannot be less then 6";
+                        }
+
+                        return null;
+                      },
                     ),
                     SizedBox(
                       height: 20.0,
