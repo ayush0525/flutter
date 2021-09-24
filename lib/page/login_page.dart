@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -61,15 +61,16 @@ class _LoginPageState extends State<LoginPage> {
                   ),
 
                   InkWell(
-                    onTap: () {
+                    onTap: () async {
                       setState(() {
                         changeButton = true;
                       });
-                      //Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      await Future.delayed(Duration(seconds: 1));
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: AnimatedContainer(
                       duration: Duration(seconds: 1),
-                      width: changeButton ? 100 : 150,
+                      width: changeButton ? 50 : 150,
                       height: 50,
                       alignment: Alignment.center,
                       child: changeButton
@@ -91,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                         //  changeButton ? BoxShape.circle :
                         // BoxShape.rectangle,
                         borderRadius:
-                            BorderRadius.circular(changeButton ? 20 : 10),
+                            BorderRadius.circular(changeButton ? 50 : 10),
                       ),
                     ),
                   ),
