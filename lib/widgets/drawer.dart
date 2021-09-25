@@ -11,7 +11,7 @@ class MyDrawer extends StatelessWidget {
 
     return Drawer(
       child: Container(
-        color: Colors.cyan,
+        color: Colors.red,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -20,8 +20,8 @@ class MyDrawer extends StatelessWidget {
               //margin: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                accountName: Text("Ayu"),
-                accountEmail: Text("ash@gmail.com"),
+                accountName: Text("Ayu", textScaleFactor: 2.0),
+                accountEmail: Text("ash@gmail.com", textScaleFactor: 2.0),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(imageUrl),
                 ),
@@ -35,6 +35,34 @@ class MyDrawer extends StatelessWidget {
               ),
               title: Text(
                 "Home",
+                textScaleFactor: 1.5,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.profile_circled,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              title: Text(
+                "Profile",
+                textScaleFactor: 1.5,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.mail,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              title: Text(
+                "Email ID",
                 textScaleFactor: 1.5,
                 style: TextStyle(
                   color: Colors.white,

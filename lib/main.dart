@@ -15,9 +15,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.cyan,
-        // primaryTextTheme: GoogleFonts.lacquerTextTheme()
-      ),
+          primarySwatch: Colors.red,
+          primaryTextTheme: GoogleFonts.lacquerTextTheme(),
+          appBarTheme: AppBarTheme(
+              color: Colors.white,
+              elevation: 0.0,
+              iconTheme: IconThemeData(color: Colors.black),
+              textTheme: Theme.of(context).textTheme)),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
