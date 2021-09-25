@@ -11,7 +11,7 @@ class MyDrawer extends StatelessWidget {
 
     return Drawer(
       child: Container(
-        color: Colors.red,
+        color: Colors.black,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -20,7 +20,7 @@ class MyDrawer extends StatelessWidget {
               //margin: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                accountName: Text("Ayu", textScaleFactor: 2.0),
+                accountName: Text("Ayush", textScaleFactor: 2.0),
                 accountEmail: Text("ash@gmail.com", textScaleFactor: 2.0),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(imageUrl),
@@ -31,11 +31,11 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
-                size: 30.0,
+                size: 20.0,
               ),
               title: Text(
                 "Home",
-                textScaleFactor: 1.5,
+                textScaleFactor: 1.0,
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -45,11 +45,11 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(
                 CupertinoIcons.profile_circled,
                 color: Colors.white,
-                size: 30.0,
+                size: 20.0,
               ),
               title: Text(
                 "Profile",
-                textScaleFactor: 1.5,
+                textScaleFactor: 1.0,
                 style: TextStyle(
                   color: Colors.white,
                 ),
@@ -59,11 +59,11 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(
                 CupertinoIcons.mail,
                 color: Colors.white,
-                size: 30.0,
+                size: 20.0,
               ),
               title: Text(
                 "Email ID",
-                textScaleFactor: 1.5,
+                textScaleFactor: 1.0,
                 style: TextStyle(
                   color: Colors.white,
                 ),
