@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
-          primaryTextTheme: GoogleFonts.lacquerTextTheme()),
+        primarySwatch: Colors.cyan,
+        // primaryTextTheme: GoogleFonts.lacquerTextTheme()
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
