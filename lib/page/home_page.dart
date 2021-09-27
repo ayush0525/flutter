@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/catelogs.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,10 +11,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("OYEMART"),
       ),
-      body: Center(
-        child: Container(
-          child: Text("Welcome to  $name"),
-        ),
+      body: ListView.builder(
+        itemCount: CatelogModel.items.length,
+        itemBuilder: (context, index) {
+          return ItemWidget();
+        },
       ),
       drawer: MyDrawer(),
     );
