@@ -6,7 +6,8 @@ class CatelogModel {
         descripition: "good phone",
         price: 1000,
         color: "red",
-        image: ""),
+        image:
+            "http://oyemartrupans.com/uploads/proimg/Untitled-2.1631258956.png"),
   ];
 }
 
