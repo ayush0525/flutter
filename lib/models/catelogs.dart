@@ -1,5 +1,5 @@
 class CatelogModel {
-  static final items = [
+  static List<Item> items = [
     Item(
         id: 1,
         name: "iPhone 12 Pro",
@@ -8,22 +8,22 @@ class CatelogModel {
         color: "#33505a",
         image:
             "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021661000"),
-    Item(
-        id: 2,
-        name: "Pixel 5",
-        descripition: "Google Pixel phone 5th generation",
-        price: 699,
-        color: "#00ac51",
-        image:
-            "https://www.telstra.com.au/content/dam/tcom/lego/2020/plans-devices/mobiles/google-pixel-5/shared-google-pixel-5-black-05-900x1200.png"),
-    Item(
-        id: 3,
-        name: "M1 Macbook Air",
-        descripition: "Apple Macbook air with apple silicon",
-        price: 1099,
-        color: "#e0bfae",
-        image:
-            "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png")
+    // Item(
+    //     id: 2,
+    //     name: "Pixel 5",
+    //     descripition: "Google Pixel phone 5th generation",
+    //     price: 699,
+    //     color: "#00ac51",
+    //     image:
+    //         "https://www.telstra.com.au/content/dam/tcom/lego/2020/plans-devices/mobiles/google-pixel-5/shared-google-pixel-5-black-05-900x1200.png"),
+    // Item(
+    //     id: 3,
+    //     name: "M1 Macbook Air",
+    //     descripition: "Apple Macbook air with apple silicon",
+    //     price: 1099,
+    //     color: "#e0bfae",
+    //     image:
+    //         "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png")
   ];
 }
 
@@ -42,4 +42,22 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+        id: map["id"],
+        name: map["name"],
+        descripition: map["descripition"],
+        price: map["price"],
+        color: map["color"],
+        image: map["image"]);
+  }
+  toMap() => {
+        "id": id,
+        "namne": name,
+        "descripition": descripition,
+        "price": price,
+        "color": color,
+        "image": image,
+      };
 }
